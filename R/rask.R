@@ -9,12 +9,15 @@
 #' @export
 #' @import utils
 ask_google <- function(keyword = NA, warning = FALSE) {
-    if (is.na(keyword)) {
-        if (warning)
-            keyword <- get_warning() else keyword <- get_error()
+  if (is.na(keyword)) {
+    if (warning) {
+      keyword <- get_warning()
+    } else {
+      keyword <- get_error()
     }
-    keyword <- clean_keyword(keyword)
-    browseURL(sprintf("https://www.google.com/search?q=%s", URLencode(keyword)))
+  }
+  keyword <- clean_keyword(keyword)
+  browseURL(sprintf("https://www.google.com/search?q=%s", URLencode(keyword)))
 }
 
 #' Send search for keyword to Stackoverflow. If no keyword provided, will search on the latest error or warning.
@@ -28,15 +31,17 @@ ask_google <- function(keyword = NA, warning = FALSE) {
 #' @export
 #' @import utils
 ask_stackoverflow <- function(keyword = NA, warning = FALSE) {
-    if (is.na(keyword)) {
-        if (warning)
-            keyword <- get_warning() else keyword <- get_error()
-        keyword <- clean_keyword(keyword)
-        # add an R tag since it came from R session
-        keyword <- paste(keyword, "[R]")
+  if (is.na(keyword)) {
+    if (warning) {
+      keyword <- get_warning()
     } else {
-        keyword <- clean_keyword(keyword)
+      keyword <- get_error()
     }
-    browseURL(sprintf("https://www.stackoverflow.com/search?q=%s", URLencode(keyword)))
+    keyword <- clean_keyword(keyword)
+    # add an R tag since it came from R session
+    keyword <- paste(keyword, "[R]")
+  } else {
+    keyword <- clean_keyword(keyword)
+  }
+  browseURL(sprintf("https://www.stackoverflow.com/search?q=%s", URLencode(keyword)))
 }
-
