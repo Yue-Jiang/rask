@@ -9,7 +9,7 @@
 #' @export
 #' @import utils
 ask_google <- function(keyword = NA, warning = FALSE) {
-  if (is.na(keyword)) {
+  if (all(is.na(keyword))) {
     if (warning) {
       keyword <- get_warning()
     } else {
@@ -31,7 +31,7 @@ ask_google <- function(keyword = NA, warning = FALSE) {
 #' @export
 #' @import utils
 ask_stackoverflow <- function(keyword = NA, warning = FALSE) {
-  if (is.na(keyword)) {
+  if (all(is.na(keyword))) {
     if (warning) {
       keyword <- get_warning()
     } else {
