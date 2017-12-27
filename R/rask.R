@@ -17,6 +17,9 @@ ask_google <- function(keyword = NA, warning = FALSE) {
     }
   }
   keyword <- clean_keyword(keyword)
+  if (nchar(gsub(" ", "", keyword)) == 0) {
+    cat("No error / warning in history, no keyword provided, just opening Google...")
+  }
   browseURL(sprintf("https://www.google.com/search?q=%s", URLencode(keyword)))
 }
 
@@ -42,6 +45,9 @@ ask_stackoverflow <- function(keyword = NA, warning = FALSE) {
     keyword <- paste(keyword, "[R]")
   } else {
     keyword <- clean_keyword(keyword)
+  }
+  if (gsub(" ", "", keyword) == "[R]") {
+    cat("No error / warning in history, no keyword provided, just opening Stack Overflow with tag [R]...")
   }
   browseURL(sprintf("https://www.stackoverflow.com/search?q=%s", URLencode(keyword)))
 }
