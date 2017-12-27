@@ -38,12 +38,12 @@ If what we got was a warning, specify a `warning=TRUE` argument as in  `ask_goog
 
 Similary, use `ask_stackoverflow` to send search to Stack Overflow. If no keyword is provided, `ask_stackoverflow` behaves the same as `ask_google`, except that it also adds a `[R]` tag to the end of the error / warning message to specify the R tag.
 
-## For some reason, I just want to search stuff from R
+## For some reason, I just want to search stuff from within R
 
-If the `keyword` argument is provided, it will be used as search keyword. `ask_*` will try to flatten whatever that's provided into a string. For example,
+If the `keyword` argument is provided, it will be used as the search keyword. `ask_*` will try to flatten whatever that's provided into a string. For example,
 
 ```{r, eval=FALSE}
-ask_google("Rick and Morty, Pickle Rick")
+ask_google(c("Rick and Morty", "Pickle Rick"))
 ```
 
 That's one of my favorite episodes.
