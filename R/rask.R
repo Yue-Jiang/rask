@@ -14,7 +14,7 @@ ask_google <- function(keyword = NA, warning = FALSE) {
             keyword <- get_warning() else keyword <- get_error()
     }
     keyword <- clean_keyword(keyword)
-    browseURL(sprintf("https://www.google.com/search?q=%s", URLencode(clean_keyword(keyword))))
+    browseURL(sprintf("https://www.google.com/search?q=%s", URLencode(keyword)))
 }
 
 #' Send search for keyword to Stackoverflow. If no keyword provided, will search on the latest error or warning.
@@ -37,6 +37,6 @@ ask_stackoverflow <- function(keyword = NA, warning = FALSE) {
     } else {
         keyword <- clean_keyword(keyword)
     }
-    browseURL(sprintf("https://www.stackoverflow.com/search?q=%s", URLencode(clean_keyword(keyword))))
+    browseURL(sprintf("https://www.stackoverflow.com/search?q=%s", URLencode(keyword)))
 }
 
