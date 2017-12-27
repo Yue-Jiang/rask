@@ -1,5 +1,12 @@
 # rask
+
+[ɑːsk]
+
 send error / warning / whatever to google or stackoverflow from within R
+
+## Installation
+
+If you don't have `devtools` installed yet, go ahead and install it. Then `rask` can be installed from github by `devtools::install_github("Yue-Jiang/rask")`.
 
 The rask library provides two functions:
 
@@ -25,6 +32,8 @@ And we can ask google about this error message.
 ask_google()
 ```
 
+This will open up a browser tab showing google search results of this error message. Unless there is a new error message, the current error message will be preserved, in case you would like to try your luck on Stack Overflow instead later.
+
 If what we got was a warning, specify a `warning=TRUE` argument as in  `ask_google(warning=TRUE)`. This will send a Google search for the latest warning you have in the history.
 
 Similary, use `ask_stackoverflow` to send search to Stack Overflow. If no keyword is provided, `ask_stackoverflow` behaves the same as `ask_google`, except that it also adds a `[R]` tag to the end of the error / warning message to specify the R tag.
@@ -36,3 +45,5 @@ If the `keyword` argument is provided, it will be used as search keyword. `ask_*
 ```{r, eval=FALSE}
 ask_google("Rick and Morty, Pickle Rick")
 ```
+
+That's one of my favorite episodes.
