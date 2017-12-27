@@ -1,0 +1,15 @@
+Package: rask
+Type: Package
+Title: Ask Google / Stackoverflow Within R 
+Version: 0.1.0
+Authors@R: person("Yue", "Jiang", email = "yuejiangyj31@gmail.com",
+  role = c("aut", "cre"))
+Description: Sends error or warning messages to Google or Stackoverflow.
+    Can also be used to send searches about any input string from within R.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
